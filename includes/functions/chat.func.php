@@ -1,8 +1,8 @@
 <?php
-    include_once ('../database/connect.db.php');
+
     function get_msg(){
         global $connection;
-        $sql = "SELECT Sender,Message FROM chat";
+        $sql = "SELECT Sender,Message FROM chat ORDER BY Msg_ID DESC ";
 
         $run = mysqli_query($connection,$sql);
 
@@ -15,6 +15,7 @@
             );
         }
         mysqli_close($connection);
+        return $messages;
     }
     function send_msg($sender,$msg){
         global $connection;
@@ -29,14 +30,11 @@
             $sql = "INSERT INTO chat (Sender,Message) VALUES ('$sender','$msg')";
 
             if(mysqli_query($connection,$sql)){
-                mysqli_close($connection);
                 return true;
             }else{
-                mysqli_close($connection);
                 return false;
             }
         }else{
-            mysqli_close($connection);
             return false;
         }
 
