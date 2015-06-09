@@ -36,11 +36,7 @@ if(isset($_POST['send'])){
     <body>
         <div id="messages">
             <?php
-            $messages = get_msg();
-            foreach($messages as $message){
-                echo '<strong>'.$message['sender'].'</strong> send <br/>';
-                echo '<pre>'.$message['message'].'</pre> <hr/>';
-            }
+
             ?>
         </div> <!--Messages-->
         <div id="input">
@@ -49,6 +45,10 @@ if(isset($_POST['send'])){
             <p><label>Enter message :<textarea name="message" cols="40" rows="6"></textarea></label></p>
             <p><input type="submit" name="send" value="send"></p>
         </form>
+
+            <!--javascript ... -->
+        <script type="text/javascript" src="scripts/js/jquery-1.11.3.js"></script>
+            <script type="text/javascript" src="scripts/js/auto_chat.js"></script>
         </div>
     </body>
 </html>

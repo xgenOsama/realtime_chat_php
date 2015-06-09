@@ -21,10 +21,10 @@
         global $connection;
         if(!empty($sender) && !empty($msg)){
             $sender = mysqli_real_escape_string($connection,$sender);
-            $sender = htmlentities($sender);
+           // $sender = htmlentities($sender);
             $sender = htmlspecialchars($sender);
             $msg = mysqli_real_escape_string($connection,$msg);
-            $msg = htmlentities($msg);
+           // $msg = htmlentities($msg);
             $msg = htmlspecialchars($msg);
 
             $sql = "INSERT INTO chat (Sender,Message) VALUES ('$sender','$msg')";
