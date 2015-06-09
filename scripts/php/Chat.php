@@ -8,6 +8,3 @@ foreach($messages as $message){
     echo '<strong>'.$message['sender'].'</strong> send <br/>';
     echo '<pre>'.$message['message'].'</pre> <hr/>';
 }
-
-echo $messages;
-exit();
