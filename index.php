@@ -21,7 +21,7 @@ require ('includes/core.inc.php');
             html ,body{
                 margin: 0px;
                 padding: 0px;
-                background: cadetblue;
+                background-color:cadetblue ;
             }
             #messages{
                 color: #CCCCCC;
